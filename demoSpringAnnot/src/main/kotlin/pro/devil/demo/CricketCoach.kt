@@ -1,5 +1,8 @@
 package pro.devil.demo
 
+import org.springframework.stereotype.Component
+
+@Component
 class CricketCoach : ICoach {
 
     var emailAddress: String = ""
