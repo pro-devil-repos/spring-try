@@ -17,9 +17,17 @@
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
+    <!-- Define dependencies -->
+    <bean id="myFortune" class="pro.devil.demo.HappyFortuneService">
+
+    </bean>
+
     <!-- Define your beans here -->
     <bean id="myCoach"
           class="pro.devil.demo.BaseballCoach">
+
+        <!-- Set-up constructor injections -->
+        <constructor-arg ref="myFortune" />
     </bean>
 
 </beans>
