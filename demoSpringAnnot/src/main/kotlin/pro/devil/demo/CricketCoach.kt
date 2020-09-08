@@ -1,12 +1,14 @@
 package pro.devil.demo
 
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 
 @Component
 class CricketCoach : ICoach {
 
     @Autowired
+    @Qualifier("sadFortuneService")
     lateinit var fortuneService: IFortuneService
 
     override fun getDailyWorkout() = "Play some cricket! With your Team"
