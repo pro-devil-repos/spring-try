@@ -30,4 +30,7 @@
         <constructor-arg ref="myFortune" />
     </bean>
 
+    <bean id="myCricketCoach" class="pro.devil.demo.CricketCoach">
+        <property name="fortuneService" ref="myFortune" />
+    </bean>
 </beans>

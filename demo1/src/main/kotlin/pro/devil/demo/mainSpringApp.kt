@@ -10,5 +10,9 @@ fun main() {
     println(coach.getDailyWorkout())
     println(coach.getDailyFortune())
 
+    val cricketCoach = context.getBean("myCricketCoach", ICoach::class.java)
+    println(cricketCoach.getDailyWorkout())
+    println(cricketCoach.getDailyFortune())
+
     context.close()
 }
