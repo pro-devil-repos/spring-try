@@ -1,4 +1,4 @@
-package utils
+package pro.devil.demo.utils
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.logging.ConsoleHandler

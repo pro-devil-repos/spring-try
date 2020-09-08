@@ -1,3 +1,4 @@
+package pro.devil.demo
 
 class TrackCoach(private val fortuneService: IFortuneService? = null) : ICoach {
 

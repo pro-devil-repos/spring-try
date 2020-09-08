@@ -1,3 +1,4 @@
+package pro.devil.demo
 
 class CricketCoach : ICoach {
 
