@@ -10,6 +10,9 @@ repositories {
     mavenCentral()
 }
 dependencies {
+    implementation("org.springframework", "spring-core", "5.2.8.RELEASE")
+    implementation("org.springframework", "spring-context", "5.2.8.RELEASE")
+
     testImplementation(kotlin("test-junit5"))
 }
 tasks.withType<KotlinCompile>() {
