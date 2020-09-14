@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Try Forms - Input Form</title>
+</head>
+
+<body>
+<form method="post" action="/student/process">
+    <p>
+        <label>
+            <input type="text" placeholder="Input First Name, please!" name="firstName"/>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input type="text" placeholder="Input Last Name, please!" name="lastName"/>
+        </label>
+    </p>
+    <p>
+        <label>
+            <select name="country">
+                {{#countries.entrySet}}
+                    <option value="{{key}}">{{value}} ({{key}})</option>
+                {{/countries.entrySet}}
+            </select>
+        </label>
+    </p>
+    <p>
+        <label>
+            {{#languages}}
+                {{.}} <input type="radio" name="language" value="{{.}}"> <br />
+            {{/languages}}
+        </label>
+    </p>
+    <input type="submit"/>
+</form>
+</body>
+</html>
