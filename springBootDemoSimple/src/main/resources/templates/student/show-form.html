@@ -13,32 +13,29 @@
 <main role="main" class="container">
     <form method="post" action="#" th:action="@{/student/process}" th:object="${student}">
         <p>
-            <label>
-                <input type="text" placeholder="Input First Name, please!" th:field="*{firstName}"/>
-            </label>
+            <label th:for="${#ids.next('firstName')}">First Name</label>
+            <input type="text" placeholder="Input First Name, please!" th:field="*{firstName}"/>
         </p>
         <p>
-            <label>
-                <input type="text" placeholder="Input Last Name, please!" th:field="*{lastName}"/>
-            </label>
+            <label th:for="${#ids.next('lastName')}">Last Name</label>
+            <input type="text" placeholder="Input Last Name, please!" th:field="*{lastName}" th:errorclass="error" />
+            <ol>
+                <li th:each="err: ${#fields.errors('lastName')}" class="error" th:text="${err}"></li>
+            </ol>
         </p>
         <p>
-            <label>
-                <select th:field="*{country}">
-                    <option
-                            th:each="entry : ${countries}"
-                            th:value="${entry['key']}"
-                            th:text="${entry['value'] + ' ' + entry['key']}"></option>
-                </select>
-            </label>
+            <label th:for="${#ids.next('country')}">Country</label>
+            <select th:field="*{country}">
+                <option
+                        th:each="entry : ${countries}"
+                        th:value="${entry['key']}"
+                        th:text="${entry['value'] + ' ' + entry['key']}"></option>
+            </select>
         </p>
         <h3>Choose language</h3>
         <p th:each="entry : ${languages}">
-            <label>
-                <span th:text="${entry}"></span>
-                <input type="radio" th:field="*{language}" th:value="${entry}" />
-                <br/>
-            </label>
+            <input type="radio" th:field="*{language}" th:value="${entry}"/>
+            <label th:for="${#ids.prev('language')}" th:text="${entry}"></label>
         </p>
         <input type="submit"/>
     </form>
