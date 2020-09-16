@@ -1,0 +1,36 @@
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>SOME TITLE</title>
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.5.2/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Pro.Devil</a>
+    </nav>
+
+    <main role="main" class="container">
+
+        <div class="starter-template">
+            <h1>Pro.Devil Simple Spring Boot Kotlin Try</h1>
+        </div>
+
+        <ol>
+            <li>
+                <a href="/showStatic">Show Static Example</a>
+            </li>
+            <li>
+                <a href="/forms/">Show Form Example</a>
+            </li>
+            <li>
+                <a href="/student">Show Student Example</a>
+            </li>
+        </ol>
+    </main>
+
+    <script type="text/javascript" th:src="@{webjars/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+</body>
+</html>

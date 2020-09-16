@@ -1,0 +1,51 @@
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>SOME TITLE</title>
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.5.2/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+
+<main role="main" class="container">
+    <form method="post" action="#" th:action="@{/student/process}" th:object="${student}">
+        <p>
+            <label>
+                <input type="text" placeholder="Input First Name, please!" th:field="*{firstName}"/>
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="text" placeholder="Input Last Name, please!" th:field="*{lastName}"/>
+            </label>
+        </p>
+        <p>
+            <label>
+                <select th:field="*{country}">
+                    <option
+                            th:each="entry : ${countries}"
+                            th:value="${entry['key']}"
+                            th:text="${entry['value'] + ' ' + entry['key']}"></option>
+                </select>
+            </label>
+        </p>
+        <h3>Choose language</h3>
+        <p th:each="entry : ${languages}">
+            <label>
+                <span th:text="${entry}"></span>
+                <input type="radio" th:field="*{language}" th:value="${entry}" />
+                <br/>
+            </label>
+        </p>
+        <input type="submit"/>
+    </form>
+</main>
+
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

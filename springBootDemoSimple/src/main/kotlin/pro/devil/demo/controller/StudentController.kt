@@ -29,7 +29,7 @@ class StudentController {
     }
 
     @PostMapping("/process")
-    fun processForm(@ModelAttribute student: Student, model: Model): String {
+    fun processForm(student: Student, model: Model): String {
         model["student"] = student
         model["countryName"] = countries[student.country] ?: "Unknown Country"
         return "student/result-form"
