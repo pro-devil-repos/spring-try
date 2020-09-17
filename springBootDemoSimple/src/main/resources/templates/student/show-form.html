@@ -37,6 +37,14 @@
             <input type="radio" th:field="*{language}" th:value="${entry}"/>
             <label th:for="${#ids.prev('language')}" th:text="${entry}"></label>
         </p>
+        <h3>Input Course Code (starting with LUV)</h3>
+        <p>
+            <label th:for="${#ids.next('courseCode')}">Course Code</label>
+            <input type="text" placeholder="Input Course Code, please!" th:field="*{courseCode}" th:errorclass="error" />
+            <ol>
+                <li th:each="err: ${#fields.errors('courseCode')}" class="error" th:text="${err}"></li>
+            </ol>
+        </p>
         <input type="submit"/>
     </form>
 </main>
